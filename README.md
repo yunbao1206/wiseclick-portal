@@ -1,2 +1,3 @@
-# wiseclick-portal
-WiseClick portal site - wiseclick.site
+# WiseClick Portal
+
+Portal site for wiseclick.site
