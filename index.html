@@ -148,5 +148,13 @@
     </div>
   </footer>
 
+
+  <div class="cookie-banner" id="cookie-banner">
+    <p>We use cookies for analytics and advertising. <a href="/privacy/">Learn more</a>. You can accept or reject non-essential cookies.</p>
+    <button class="cookie-btn" onclick="document.getElementById('cookie-banner').classList.add('hidden');localStorage.setItem('cookie-consent','1')">Accept</button>
+    <button class="cookie-btn cookie-reject" onclick="document.getElementById('cookie-banner').classList.add('hidden');localStorage.setItem('cookie-consent','0')">Reject</button>
+  </div>
+  <script>if(localStorage.getItem('cookie-consent')!==null)document.getElementById('cookie-banner').classList.add('hidden');</script>
+
 </body>
 </html>
