@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - WiseClick</title>
   <meta name="description" content="Learn about WiseClick, our mission, and the free online tools we build.">
@@ -39,21 +40,19 @@
     <h1>About WiseClick</h1>
 
     <h2>Our Mission</h2>
-    <p>WiseClick provides free, accurate, and easy-to-use online tools that help people make smarter financial decisions. We believe everyone deserves access to the same quality of financial tools that professionals use, without any cost or barriers.</p>
+    <p>WiseClick provides free, accurate, and easy-to-use online tools that help people make smarter decisions — from finances and insurance to health and fitness. We believe everyone deserves access to the same quality of tools that professionals use, without any cost or barriers.</p>
 
     <h2>What We Offer</h2>
-    <p>Our flagship product, <strong>FinanceToolHub</strong>, is a collection of 12 free financial calculators covering:</p>
-    <ul>
-      <li>Mortgage and home loan calculations</li>
-      <li>Personal and business loan planning</li>
-      <li>Compound interest and investment growth</li>
-      <li>Credit card payoff strategies</li>
-      <li>Auto loan and car payment estimation</li>
-      <li>Retirement and 401(k) planning</li>
-      <li>Federal and state tax estimation</li>
-      <li>Annuity and savings calculations</li>
-      <li>Paycheck and take-home pay estimation (all 50 US states)</li>
-    </ul>
+    <p>WiseClick is a growing network of free online tools. Our current sites include:</p>
+
+    <h3>FinanceToolHub</h3>
+    <p>12 free financial calculators covering mortgage, loans, compound interest, credit cards, auto loans, retirement, 401(k), taxes, annuities, savings, and paycheck estimation for all 50 US states.</p>
+
+    <h3>InsureWise</h3>
+    <p>8 free insurance calculators for auto, life, home, health, pet, travel, insurance needs assessment, and deductible vs premium comparison.</p>
+
+    <h3>FitCalc</h3>
+    <p>Health and fitness calculators to help you reach your wellness goals.</p>
 
     <h2>Our Principles</h2>
     <ul>
@@ -92,10 +91,16 @@
 
   <div class="cookie-banner" id="cookie-banner">
     <p>We use cookies for analytics and advertising. <a href="/privacy/">Learn more</a>. You can accept or reject non-essential cookies.</p>
-    <button class="cookie-btn" onclick="document.getElementById('cookie-banner').classList.add('hidden');localStorage.setItem('cookie-consent','1')">Accept</button>
-    <button class="cookie-btn cookie-reject" onclick="document.getElementById('cookie-banner').classList.add('hidden');localStorage.setItem('cookie-consent','0')">Reject</button>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Reject</button>
   </div>
-  <script>if(localStorage.getItem('cookie-consent')!==null)document.getElementById('cookie-banner').classList.add('hidden');</script>
+  <script>
+  function acceptCookies(){localStorage.setItem('cookie-consent','accepted');document.getElementById('cookie-banner').classList.add('hidden');loadNonEssentialScripts();}
+  function rejectCookies(){localStorage.setItem('cookie-consent','rejected');document.getElementById('cookie-banner').classList.add('hidden');}
+  function loadNonEssentialScripts(){if(localStorage.getItem('cookie-consent')!=='accepted')return;/* Add AdSense/Analytics here when ready */}
+  if(localStorage.getItem('cookie-consent')!==null)document.getElementById('cookie-banner').classList.add('hidden');
+  if(localStorage.getItem('cookie-consent')==='accepted')loadNonEssentialScripts();
+  </script>
 
 </body>
 </html>
