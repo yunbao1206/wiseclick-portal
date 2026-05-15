@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WiseClick - Free Online Tools for Smarter Decisions</title>
   <meta name="description" content="WiseClick offers free online financial calculators and tools to help you make smarter decisions. Mortgage, loan, tax, retirement calculators and more.">
@@ -81,8 +82,8 @@
           </div>
           <div class="tool-info">
             <h4>InsureWise</h4>
-            <p>6 free insurance calculators for auto, life, home, health, insurance needs assessment, and deductible vs premium comparison. Estimate your coverage and find the best rates.</p>
-            <span class="tool-badge">6 Calculators</span>
+            <p>8 free insurance calculators for auto, life, home, health, pet, travel, insurance needs assessment, and deductible vs premium comparison. Estimate your coverage and find the best rates.</p>
+            <span class="tool-badge">8 Calculators</span>
           </div>
         </a>
       </div>
@@ -151,10 +152,16 @@
 
   <div class="cookie-banner" id="cookie-banner">
     <p>We use cookies for analytics and advertising. <a href="/privacy/">Learn more</a>. You can accept or reject non-essential cookies.</p>
-    <button class="cookie-btn" onclick="document.getElementById('cookie-banner').classList.add('hidden');localStorage.setItem('cookie-consent','1')">Accept</button>
-    <button class="cookie-btn cookie-reject" onclick="document.getElementById('cookie-banner').classList.add('hidden');localStorage.setItem('cookie-consent','0')">Reject</button>
+    <button class="cookie-btn" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-btn cookie-reject" onclick="rejectCookies()">Reject</button>
   </div>
-  <script>if(localStorage.getItem('cookie-consent')!==null)document.getElementById('cookie-banner').classList.add('hidden');</script>
+  <script>
+  function acceptCookies(){localStorage.setItem('cookie-consent','accepted');document.getElementById('cookie-banner').classList.add('hidden');loadNonEssentialScripts();}
+  function rejectCookies(){localStorage.setItem('cookie-consent','rejected');document.getElementById('cookie-banner').classList.add('hidden');}
+  function loadNonEssentialScripts(){if(localStorage.getItem('cookie-consent')!=='accepted')return;/* Add AdSense/Analytics here when ready */}
+  if(localStorage.getItem('cookie-consent')!==null)document.getElementById('cookie-banner').classList.add('hidden');
+  if(localStorage.getItem('cookie-consent')==='accepted')loadNonEssentialScripts();
+  </script>
 
 </body>
 </html>
