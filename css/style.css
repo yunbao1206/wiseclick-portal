@@ -254,6 +254,11 @@ a:hover { text-decoration: underline; }
   color: var(--text-secondary);
 }
 .footer-links a:hover { color: var(--primary); }
+.cross-site-links { font-size: 0.8rem; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.cross-site-links span { font-weight: 600; }
+.cross-site-links a { color: var(--primary); text-decoration: none; }
+.cross-site-links a:hover { text-decoration: underline; }
+
 .footer-copy {
   font-size: 0.8rem;
   color: var(--text-light);
